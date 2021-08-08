@@ -1,18 +1,27 @@
+/*Variables*/
+$color_text: white;
+$background_1: #0f52ba;
+$background_2: #055052;
+$fuente: "Mulish", sans-serif;
+
+/*Mixing*/
+@mixin flex {
+  display: flex;
+  align-items: center;
+}
+
 body {
   margin: 0px;
-  /* background-color: #8f57fd; */
-  background: linear-gradient(#0f52ba, #055052);
-  font-family: "Mulish", sans-serif;
+  background: linear-gradient($background_1, $background_2);
+  font-family: $fuente;
 }
 
 .header {
-  /*  background-color: #8f57fd; */
-  background-color: #0f52ba;
+  @include flex;
+  background-color: $background_1;
   width: 100%;
   height: 80px;
-  display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .header__img {
@@ -23,16 +32,26 @@ body {
 
 .header__menu {
   margin-right: 30px;
-}
-
-.header__menu ul {
-  display: none;
-  list-style: none;
-  padding: 0px;
-  position: absolute;
-  width: 100px;
-  text-align: right;
-  margin: 0px 0px 0px -14px;
+  ul {
+    display: none;
+    list-style: none;
+    padding: 0px;
+    position: absolute;
+    width: 100px;
+    text-align: right;
+    margin: 0px 0px 0px -14px;
+    li {
+      margin: 10px 0px;
+      a {
+        color: $color_text;
+        text-decoration: none;
+        font-size: small;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }
 
 .header__menu:hover ul,
@@ -40,51 +59,33 @@ ul:hover {
   display: block;
 }
 
-.header__menu li {
-  margin: 10px 0px;
-}
-
-.header__menu li a {
-  color: white;
-  text-decoration: none;
-  font-size: small;
-}
-
-.header__menu li a:hover {
-  text-decoration: underline;
-}
-
 .header__menu--profile {
+  @include flex;
   margin-right: 8px;
-  display: flex;
-  align-items: center;
-}
-
-.header__menu--profile img {
-  margin-right: 8px;
-  width: 40px;
-}
-
-.header__menu--profile p {
-  margin: 0px;
-  color: white;
+  img {
+    margin-right: 8px;
+    width: 40px;
+  }
+  p {
+    margin: 0px;
+    color: $color_text;
+  }
 }
 
 .main {
+  @include flex;
   height: 300px;
-  display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
 .main__title {
-  color: white;
+  color: $color_text;
   font-size: 25px;
 }
 
 .categories__title {
-  color: white;
+  color: $color_text;
   font-size: 16px;
   position: absolute;
   padding-left: 30px;
@@ -93,10 +94,10 @@ ul:hover {
 
 .input {
   background-color: rgba(255, 255, 255, 0.1);
-  border: 2px solid white;
+  border: 2px solid $color_text;
   border-radius: 30px;
-  color: white;
-  font-family: "Mulish", sans-serif;
+  color: $color_text;
+  font-family: $fuente;
   font-size: 16px;
   height: 50px;
   padding: 0px 20px;
@@ -105,7 +106,7 @@ ul:hover {
 }
 
 ::placeholder {
-  color: white;
+  color: $color_text;
 }
 
 .carousel {
@@ -116,7 +117,7 @@ ul:hover {
 }
 
 .carousel__container {
-  white-space: nowrap;
+  $color_text-space: nowrap;
   margin: 70px 0px;
   padding-bottom: 10px;
 }
@@ -173,68 +174,60 @@ ul:hover {
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
-}
-
-.carousel-item__details img {
-  height: 15px;
-}
-.carousel-item__details p {
-  margin: 0px;
-  font-family: "Mulish", sans-serif;
+  img {
+    height: 15px;
+  }
+  p {
+    margin: 0px;
+    font-family: $fuente;
+  }
 }
 
 .carousel-item__details:hover {
   opacity: 1;
-  color: white;
+  color: $color_text;
 }
 
 .footer {
-  /* background-color: #ab88ff; */
-  background-color: #055052;
-  display: flex;
-  align-items: center;
+  @include flex;
+  background-color: $background_2;
   height: 100px;
   width: 100%;
-}
-
-.footer a {
-  color: white;
-  cursor: pointer;
-  font-size: 14px;
-  padding-left: 30px;
-  text-decoration: none;
-}
-
-.footer a:hover {
-  text-decoration: underline;
+  a {
+    color: $color_text;
+    cursor: pointer;
+    font-size: 14px;
+    padding-left: 30px;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
 }
 
 .error_404 {
+  @include flex;
   height: 652px;
   width: 100%;
-  display: flex;
-  align-items: center;
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
-}
-
-.error_404 h1 {
-  font-size: 80px;
-}
-
-.error_404 p {
-  font-size: 20px;
-  color: white;
-  font-family: "Mulish", sans-serif;
+  h1 {
+    font-size: 80px;
+  }
+  p {
+    font-size: 20px;
+    color: $color_text;
+    font-family: $fuente;
+  }
 }
 
 .text {
   text-align: center;
   margin-top: 56px;
-  color: #fff;
+  color: $color_text;
   font-size: 1em;
-  font-family: "Mulish", sans-serif;
+  font-family: $fuente;
   text-transform: uppercase;
 }
 
