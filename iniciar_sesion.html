@@ -15,14 +15,29 @@
   </head>
   <body>
     <header class="header">
-      <img class="header__img" src="icons/logo-platzi.png" alt="" />
+      <img
+        tabindex="0"
+        class="header__img"
+        src="assets/logo-platzi.png"
+        alt="Platzi Video"
+      />
     </header>
     <section class="login">
       <section class="login__container">
-        <h2>Inicia sesión</h2>
+        <h2 tabindex="0">Inicia sesión</h2>
         <form class="login__container--form">
-          <input class="input" type="text" placeholder="Correo" />
-          <input class="input" type="password" placeholder="Contraseña" />
+          <input
+            aria-label="Correo"
+            class="input"
+            type="text"
+            placeholder="Correo"
+          />
+          <input
+            aria-label="Contraseña"
+            class="input"
+            type="password"
+            placeholder="Contraseña"
+          />
           <button class="button">Iniciar sesión</button>
           <div class="login__container--remember-me">
             <label>
@@ -38,12 +53,12 @@
         </form>
         <section class="login__container--social-media">
           <div>
-            <img src="icons/google-icon.webp" alt="Google" />Inicia sesión con
+            <img src="assets/google-icon.webp" alt="Google" />Inicia sesión con
             Google
           </div>
           <div>
-            <img src="icons/twitter-icon.webp" alt="Twitter" />Inicia sesión con
-            Twitter
+            <img src="assets/twitter-icon.webp" alt="Twitter" />Inicia sesión
+            con Twitter
           </div>
         </section>
         <p class="login__container--register">
